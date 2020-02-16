@@ -1,0 +1,66 @@
+.hamburger-btn {
+  border: 2px solid #2C2830;
+  height: 18px;
+  width: 18px;
+  box-sizing: content-box;
+  padding: 6px;
+  position: relative;
+  cursor: pointer;
+
+  .hamburger__middle-line {
+    position: absolute;
+    width: 17px;
+    height: 2px;
+    top: 50%;
+    left: 50%;
+    display: block;
+    margin-top: -1px;
+    margin-left: -8.5px;
+    background-color: #2C2830;
+
+    &::before,
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      width: 17px;
+      height: 2px;
+      background-color: #2C2830;
+    }
+
+    &::before {
+      top: -5px;
+
+    }
+
+    &::after {
+      top: 5px;
+    }
+  }
+  &.is-active {
+    .hamburger__middle-line {
+      background: transparent;
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.insure-btn {
+  color: #fff;
+  text-align: center;
+  font-size: 1em;
+  border: 2px solid #fff;
+  padding: .9em 2.3em;
+  &.full-width {
+    display: block;
+    padding: .9em 0;
+    width: 100%;
+  }
+}
