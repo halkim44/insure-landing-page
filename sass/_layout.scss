@@ -42,13 +42,18 @@ header {
   background-repeat: no-repeat;
   background-position: 0 90%;
   background-size: 100%;
-
   font-size: 1.375em;
   font-weight: 700;
   color: #fff;
   padding: 30px 24px;
 
   ul {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 35%;
+    transform: translateY(-50%);
+
     li {
       padding: 18px 0;
       margin-bottom: 6px;

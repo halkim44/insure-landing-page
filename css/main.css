@@ -163,6 +163,15 @@ header .logo a img {
   padding: 30px 24px;
 }
 
+.nav-list ul {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 35%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
 .nav-list ul li {
   padding: 18px 0;
   margin-bottom: 6px;
