@@ -1,0 +1,192 @@
+@media screen and (min-width: 768px) {
+  .hamburger-btn {
+    display: none;
+  }
+
+  h2 {
+    font-size: 4.4em;
+    letter-spacing: -.5px;
+  }
+
+  .nav-list {
+    position: static;
+    background: none;
+    padding: 0;
+    font-size: 1em;
+
+    ul {
+      height: 100%;
+      position: static;
+      transform: none;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      li {
+        color: $very-grayish-violet;
+        padding: 0;
+        margin: 0;
+        margin-left: 1.2em;
+
+        a:hover {
+          color: $dark-violet;
+        }
+
+        &:last-child {
+          margin-left: 2em;
+          margin-right: 0;
+        }
+      }
+    }
+
+    .insure-btn {
+      color: $very-dark-violet;
+      border-color: $very-dark-violet;
+      padding: .6em 1.2em;
+      letter-spacing: 1px;
+    }
+  }
+
+  main {
+    text-align: left;
+    position: relative;
+
+    .hero-wrapper {
+      &::after {
+        top: -82px;
+        height: 594px;
+        left: auto;
+        right: 0;
+        width: 460px;
+        background-image: url('../img/bg-pattern-intro-right-desktop.svg');
+        background-size: 100% 100%;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 504px;
+        width: 200px;
+        bottom: -332px;
+        background: no-repeat url('../img/bg-pattern-intro-left-desktop.svg');
+      }
+
+
+      .max-w-1142 {
+        position: relative;
+      }
+    }
+
+    .hero__img-wrapper {
+      position: absolute;
+      right: 20px;
+      top: 105px;
+      width: 540px;
+    }
+
+    .intro {
+      margin-right: 540px;
+      padding: 105px 40px 126px 20px;
+      background: none;
+
+      &::before {
+        display: block;
+        content: '';
+        border-top: 1px solid hsla(0, 0%, 100%, .8);
+        width: 150px;
+        height: 58px;
+        margin-left: -8px;
+      }
+
+      .insure-btn {
+        padding: .825em 1.8em;
+      }
+    }
+  }
+
+  #feature {
+    padding-top: 306px;
+
+    .content-wrapper {
+      padding-top: 30px;
+
+      &::before {
+        width: 150px;
+        height: 2px;
+        left: 14px;
+        transform: none;
+      }
+    }
+
+    .feature-grid {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 18px;
+      margin-bottom: 20px;
+
+      .feature-grid__item {
+        width: 348px;
+
+        svg {
+          margin: 36px 0;
+        }
+      }
+    }
+  }
+
+  #more-info {
+    padding-bottom: 150px;
+    .content-wrapper {
+      padding: 0 78px;
+      height: 250px;
+      display: flex;
+      max-width: 1102px;
+      margin: 0 auto;
+      justify-content: space-between;
+      align-items: center;
+      background-image: url('../img/bg-pattern-how-we-work-desktop.svg');
+
+      h2 {
+        width: 500px;
+        font-size: 3.6em;
+        margin: 0;
+      }
+    }
+  }
+
+  footer {
+    padding: 30px 0 0;
+    background-image: url('../img/bg-pattern-footer-desktop.svg');
+
+    .logo-socmed {
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+    }
+    nav {
+      text-align: left;
+      max-width: 1102px;
+      margin: 0 auto;
+      display: flex;
+      padding: 50px 0 25px;
+
+      section {
+        &:nth-child(1){
+          width: 285px;
+        }
+        &:nth-child(2) {
+          width: 285px;
+        }
+        &:nth-child(3) {
+          flex: auto;
+        }
+        &:nth-child(4) {
+          width: 251px;
+        }
+      }
+    }
+  }
+}

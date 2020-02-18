@@ -111,7 +111,7 @@ h2 {
 /* END OF RESETS */
 /* START OF HEADER */
 .outermost-wrapper {
-  padding-top: 78px;
+  padding-top: 80px;
 }
 
 .header-wrapper {
@@ -119,13 +119,15 @@ h2 {
   top: 0;
   width: 100%;
   z-index: 3;
+  background-color: #fff;
 }
 
 header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 78px;
+  height: 80px;
+  margin: 0 auto;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -133,7 +135,6 @@ header {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 18px;
-  background-color: #fff;
 }
 
 header .logo a {
@@ -147,7 +148,7 @@ header .logo a img {
 
 .nav-list {
   position: fixed;
-  top: 78px;
+  top: 80px;
   height: 100%;
   bottom: 0;
   left: 100%;
@@ -178,14 +179,32 @@ header .logo a img {
 }
 
 /* END OF HEADER */
-.hero-wrapper picture {
+.hero-wrapper {
+  background-color: #2d2640;
+  position: relative;
+}
+
+.hero-wrapper::after {
+  display: block;
+  content: "";
+  height: 334px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -210px;
+  background-image: url("../img/bg-pattern-intro-right-mobile.svg");
+  background-position: right 0;
+  background-repeat: no-repeat;
+}
+
+.hero__img-wrapper picture {
   display: block;
   height: 0;
   padding-bottom: 120.3%;
   position: relative;
 }
 
-.hero-wrapper picture img {
+.hero__img-wrapper picture img {
   position: absolute;
   top: 0;
   left: 0;
@@ -194,8 +213,7 @@ header .logo a img {
 }
 
 /* INTRO */
-#intro {
-  background-color: #2d2640;
+.intro {
   color: #fff;
   padding: 90px 20px;
   position: relative;
@@ -203,43 +221,33 @@ header .logo a img {
   background-repeat: no-repeat;
 }
 
-#intro::after {
-  display: block;
-  content: "";
-  height: 334px;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 344px;
-  background: right 0 no-repeat url("../img/bg-pattern-intro-right-mobile.svg");
-}
-
-#intro .text-content h2 {
+.intro .text-content h2 {
   margin-bottom: 18px;
 }
 
-#intro .text-content p {
+.intro .text-content p {
   line-height: 26px;
   margin-bottom: 30px;
 }
 
-#intro .text-content button {
+.intro .text-content button {
   font-size: .86em;
 }
 
 /* Start of Feature */
 #feature {
-  padding: 140px 20px 120px;
+  padding: 140px 0 120px;
 }
 
 #feature .content-wrapper {
   position: relative;
+  padding: 0 20px;
 }
 
 #feature .content-wrapper::before {
   display: block;
   content: "";
-  background-color: #b89db5;
+  background-color: #b29eb1;
   height: 1px;
   width: 40%;
   position: absolute;
@@ -296,13 +304,20 @@ header .logo a img {
 }
 
 /* END OF MORE INFO */
-/* START OF SOCIAL MEDIA LIST */
+/* START OF FOOTER */
 footer {
   background-color: #fafafa;
-  padding: 90px 20px 0;
+  padding: 90px 0 0;
+  background-image: url("../img/bg-pattern-footer-mobile.svg");
+  background-repeat: no-repeat;
+}
+
+footer > * {
+  padding: 0 20px;
 }
 
 footer nav {
+  letter-spacing: .075em;
   border-top: .5px solid #d8d8d8;
   padding: 40px 0;
   font-weight: 700;
@@ -323,6 +338,10 @@ footer nav li {
   color: #2d2640;
 }
 
+footer nav a:hover {
+  text-decoration: underline;
+}
+
 .social-media-list {
   padding: 2em 0;
   display: -webkit-box;
@@ -337,7 +356,12 @@ footer nav li {
   margin: 0 .5em;
 }
 
-/* END OF SOCIAL MEDIA LIST */
+.social-media-list a:hover {
+  -webkit-filter: brightness(40%);
+          filter: brightness(40%);
+}
+
+/* END OF FOOTER */
 /* JS events Styling */
 .j-nav-show header .nav-list {
   left: 0;
@@ -405,11 +429,218 @@ footer nav li {
   font-size: 1em;
   border: 2px solid #fff;
   padding: .9em 2.3em;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.insure-btn.hover-dark:hover {
+  background-color: #2d2640 !important;
+  color: #fff !important;
+}
+
+.insure-btn.hover-light:hover {
+  background-color: #fff !important;
+  color: #2d2640 !important;
 }
 
 .insure-btn.full-width {
   display: block;
-  padding: .9em 0;
+  padding-top: .9em;
+  padding-bottom: .9em;
   width: 100%;
+}
+
+.max-w-1142 {
+  max-width: 1142px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .hamburger-btn {
+    display: none;
+  }
+  h2 {
+    font-size: 4.4em;
+    letter-spacing: -.5px;
+  }
+  .nav-list {
+    position: static;
+    background: none;
+    padding: 0;
+    font-size: 1em;
+  }
+  .nav-list ul {
+    height: 100%;
+    position: static;
+    -webkit-transform: none;
+            transform: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .nav-list ul li {
+    color: #837d87;
+    padding: 0;
+    margin: 0;
+    margin-left: 1.2em;
+  }
+  .nav-list ul li a:hover {
+    color: #2d2640;
+  }
+  .nav-list ul li:last-child {
+    margin-left: 2em;
+    margin-right: 0;
+  }
+  .nav-list .insure-btn {
+    color: #2b272f;
+    border-color: #2b272f;
+    padding: .6em 1.2em;
+    letter-spacing: 1px;
+  }
+  main {
+    text-align: left;
+    position: relative;
+  }
+  main .hero-wrapper::after {
+    top: -82px;
+    height: 594px;
+    left: auto;
+    right: 0;
+    width: 460px;
+    background-image: url("../img/bg-pattern-intro-right-desktop.svg");
+    background-size: 100% 100%;
+  }
+  main .hero-wrapper::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 504px;
+    width: 200px;
+    bottom: -332px;
+    background: no-repeat url("../img/bg-pattern-intro-left-desktop.svg");
+  }
+  main .hero-wrapper .max-w-1142 {
+    position: relative;
+  }
+  main .hero__img-wrapper {
+    position: absolute;
+    right: 20px;
+    top: 105px;
+    width: 540px;
+  }
+  main .intro {
+    margin-right: 540px;
+    padding: 105px 40px 126px 20px;
+    background: none;
+  }
+  main .intro::before {
+    display: block;
+    content: '';
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    width: 150px;
+    height: 58px;
+    margin-left: -8px;
+  }
+  main .intro .insure-btn {
+    padding: .825em 1.8em;
+  }
+  #feature {
+    padding-top: 306px;
+  }
+  #feature .content-wrapper {
+    padding-top: 30px;
+  }
+  #feature .content-wrapper::before {
+    width: 150px;
+    height: 2px;
+    left: 14px;
+    -webkit-transform: none;
+            transform: none;
+  }
+  #feature .feature-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-top: 18px;
+    margin-bottom: 20px;
+  }
+  #feature .feature-grid .feature-grid__item {
+    width: 348px;
+  }
+  #feature .feature-grid .feature-grid__item svg {
+    margin: 36px 0;
+  }
+  #more-info {
+    padding-bottom: 150px;
+  }
+  #more-info .content-wrapper {
+    padding: 0 78px;
+    height: 250px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 1102px;
+    margin: 0 auto;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-image: url("../img/bg-pattern-how-we-work-desktop.svg");
+  }
+  #more-info .content-wrapper h2 {
+    width: 500px;
+    font-size: 3.6em;
+    margin: 0;
+  }
+  footer {
+    padding: 30px 0 0;
+    background-image: url("../img/bg-pattern-footer-desktop.svg");
+  }
+  footer .logo-socmed {
+    height: 90px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer nav {
+    text-align: left;
+    max-width: 1102px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 50px 0 25px;
+  }
+  footer nav section:nth-child(1) {
+    width: 285px;
+  }
+  footer nav section:nth-child(2) {
+    width: 285px;
+  }
+  footer nav section:nth-child(3) {
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
+  }
+  footer nav section:nth-child(4) {
+    width: 251px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

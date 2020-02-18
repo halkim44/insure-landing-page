@@ -1,6 +1,6 @@
 /* START OF HEADER */
 .outermost-wrapper {
-  padding-top: 78px;
+  padding-top: 80px;
 }
 
 .header-wrapper {
@@ -8,15 +8,17 @@
   top: 0;
   width: 100%;
   z-index: 3;
+  background-color: #fff;
+
 }
 
 header {
   display: flex;
-  height: 78px;
+  height: 80px;
+  margin: 0 auto;
   justify-content: space-between;
   align-items: center;
   padding: 0 18px;
-  background-color: #fff;
 
   .logo {
     a {
@@ -32,7 +34,7 @@ header {
 
 .nav-list {
   position: fixed;
-  top: 78px;
+  top: 80px;
   height: 100%;
   bottom: 0;
   left: 100%;
@@ -62,8 +64,24 @@ header {
 }
 
 /* END OF HEADER */
-
 .hero-wrapper {
+  background-color: $dark-violet;
+  position: relative;
+  &::after {
+    display: block;
+    content: "";
+    height: 334px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -210px;
+    background-image: url('../img/bg-pattern-intro-right-mobile.svg');
+    background-position: right 0;
+    background-repeat: no-repeat;
+  }
+}
+
+.hero__img-wrapper {
   picture {
     display: block;
     height: 0;
@@ -80,23 +98,12 @@ header {
 }
 
 /* INTRO */
-#intro {
-  background-color: $dark-violet;
+.intro {
   color: #fff;
   padding: 90px 20px;
   position: relative;
   background-image: url('../img/bg-pattern-intro-left-mobile.svg');
   background-repeat: no-repeat;
-  &::after {
-    display: block;
-    content: "";
-    height: 334px;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 344px;
-    background: right 0 no-repeat url('../img/bg-pattern-intro-right-mobile.svg');
-  }
 
   .text-content {
     h2 {
@@ -114,14 +121,15 @@ header {
 /* Start of Feature */
 
 #feature {
-  padding: 140px 20px 120px;
+  padding: 140px 0 120px;
   .content-wrapper {
     position: relative;
+    padding: 0 20px;
 
     &::before {
       display: block;
       content: "";
-      background-color: hsl(307, 16%, 67%);
+      background-color: #b29eb1;
       height: 1px;
       width: 40%;
       position: absolute;
@@ -175,12 +183,18 @@ header {
 }
 /* END OF MORE INFO */
 
-/* START OF SOCIAL MEDIA LIST */
+/* START OF FOOTER */
 footer {
   background-color: $very-light-gray;
-  padding: 90px 20px 0;
+  padding: 90px 0 0;
+  background-image: url('../img/bg-pattern-footer-mobile.svg');
+  background-repeat: no-repeat;
+  > * {
+    padding: 0 20px
+  }
 
   nav {
+    letter-spacing: .075em;
     border-top: .5px solid #d8d8d8;
     padding: 40px 0;
     font-weight: 700;
@@ -195,6 +209,10 @@ footer {
       margin: 18px 0;
       font-size: 14px;
       color: $dark-violet;
+
+    }
+    a:hover {
+      text-decoration: underline;
     }
   }
 }
@@ -206,8 +224,11 @@ footer {
   li {
     margin: 0 .5em;
   }
+  a:hover {
+    filter: brightness(40%);
+  }
 }
-/* END OF SOCIAL MEDIA LIST */
+/* END OF FOOTER */
 
 /* JS events Styling */
 
